@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<body>
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+min-height:100vh;
+}
+body{
+
+display:flex;
+align-items:center;
+justify-content:center;
+min-height:502px;
+
+}
+
+.main:hover{
+animation:rota 2s linear infinite;
+}
+.base{
+width:200px;
+min-height:100px;
+position:absolute;
+
+bottom:100px;
+background:black;
+transform: rotateX(86deg) translateZ(-77px) translate3d(0px, -234px, 0px);
+filter:blur(29px);
+animation :colors 2s linear infinite;
+
+}
+.main{
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+animation :colo 2s linear infinite;
+transform-style:preserve-3d;
+transform: rotateY(0deg);
+
+
+}
+@keyframes rota{
+0%{
+transform:perspective(2000px) rotateY(0deg) rotateX(0deg)
+}
+100%{
+transform:perspective(2000px) rotateY(360deg) rotateX(360deg)
+}
+}
+.circle{
+width:200px;
+position:absolute;
+min-height:200px;
+border:2px solid blue;
+box-shadow:0 0 12px blue;
+filter:blur(9px);
+
+transform-style:preserve-3d;
+}
+.circle:nth-child(1){
+transform: rotateX(90deg) translateZ(100px) ;
+background:blue;
+}
+.circle:nth-child(2){
+transform:rotateY(90deg) translateZ(100px);
+background:red;
+}
+.circle:nth-child(3){
+transform:rotateY(90deg) translateZ(-100px);
+background:orange;
+}
+.circle:nth-child(4){
+transform: rotateX(0deg) translateZ(-100px);
+background:green;
+}
+.circle:nth-child(5){
+transform: rotateX(0deg) translateZ(100px);
+background:pink;
+}
+.circle:nth-child(6){
+transform:rotateX(90deg) translateZ(-100px);
+background:lightblue;
+}
+
+
+@keyframes colo{
+0%{
+filter:hue-rotate(0deg);
+-webkit-filter:hue-rotate(0deg);
+}
+100%{
+filter:hue-rotate(360deg);
+-webkit-filter:hue-rotate(360deg);
+
+}
+}
+@keyframes color{
+0%{
+filter:hue-rotate(0deg);
+-webkit-filter:hue-rotate(0deg);
+backdrop-filter:blur(19px);
+}
+100%{
+filter:hue-rotate(360deg);
+-webkit-filter:hue-rotate(360deg);
+backdrop-filter:blur(19px);
+
+}
+}
+</style>
+<div class="main">
+<span class="circle" style="--i:0"></span>
+<span class="circle" style="--i:0.1"></span>
+<span class="circle" style="--i:0.2"></span>
+<span class="circle" style="--i:0.3"></span>
+<span class="circle" style="--i:0.4"></span>
+<span class="circle" style="--i:0.5"></span>
+
+</div>
+<div class="base"></div>
+<script>
+
+</script>
+
+</body>
+</html>
